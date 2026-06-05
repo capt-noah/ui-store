@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Glass Card Profile",
+    "category": "UI Elements",
+    "description": "A beautiful glassmorphism profile card with hover effects and deep shadows, perfect for team pages.",
+    "code": "import React from 'react';\n\nexport default function GlassCard() {\n  return (\n    <div className=\"flex items-center justify-center min-h-[400px] bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-8\">\n      <div className=\"w-80 rounded-[28px] border border-white/30 bg-white/20 backdrop-blur-xl p-8 text-center shadow-[0_8px_32px_rgba(0,0,0,0.1)] hover:shadow-[0_16px_48px_rgba(0,0,0,0.2)] transition-all duration-300 hover:-translate-y-2\">\n        <div className=\"w-24 h-24 mx-auto rounded-full bg-white/30 border-2 border-white/50 mb-6 p-1 overflow-hidden\">\n          <img src=\"https://i.pravatar.cc/150?img=32\" alt=\"Profile\" className=\"w-full h-full rounded-full object-cover\" />\n        </div>\n        <h3 className=\"text-2xl font-black text-white tracking-tight mb-1\">Sarah Jenkins</h3>\n        <p className=\"text-white/80 font-medium mb-6\">Lead Designer</p>\n        <button className=\"w-full py-3 rounded-xl bg-white text-purple-600 font-bold hover:bg-white/90 transition-colors shadow-lg\">\n          View Profile\n        </button>\n      </div>\n    </div>\n  );\n}",
+    "isFree": true,
+    "credits": 0,
+    "source": "admin",
+    "status": "approved",
+    "rating": 4.9,
+    "downloads": 432
+  },
+  {
+    "name": "Premium Login Form",
+    "category": "Forms",
+    "description": "A production-ready split layout login form with social authentication, robust validation states, and smooth transitions.",
+    "code": "import React, { useState } from 'react';\n\nexport default function SplitLogin() {\n  const [loading, setLoading] = useState(false);\n\n  return (\n    <div className=\"flex min-h-[500px] w-full rounded-[32px] overflow-hidden shadow-2xl bg-white\">\n      {/* Form Section */}\n      <div className=\"w-full lg:w-1/2 p-12 flex flex-col justify-center bg-white\">\n        <div className=\"max-w-sm mx-auto w-full\">\n          <h2 className=\"text-4xl font-black tracking-tight mb-2\">Welcome back</h2>\n          <p className=\"text-gray-500 font-medium mb-8\">Please enter your details to sign in.</p>\n          \n          <form className=\"space-y-5\" onSubmit={(e) => { e.preventDefault(); setLoading(true); setTimeout(() => setLoading(false), 2000); }}>\n            <div>\n              <label className=\"text-xs font-bold text-gray-500 uppercase tracking-widest block mb-2\">Email</label>\n              <input type=\"email\" placeholder=\"hello@example.com\" className=\"w-full h-14 bg-gray-50 border border-gray-200 rounded-2xl px-6 outline-none focus:border-black focus:bg-white transition-all\" required />\n            </div>\n            <div>\n              <label className=\"text-xs font-bold text-gray-500 uppercase tracking-widest block mb-2\">Password</label>\n              <input type=\"password\" placeholder=\"••••••••\" className=\"w-full h-14 bg-gray-50 border border-gray-200 rounded-2xl px-6 outline-none focus:border-black focus:bg-white transition-all\" required />\n            </div>\n            <div className=\"flex items-center justify-between py-2\">\n              <label className=\"flex items-center gap-2 cursor-pointer\">\n                <input type=\"checkbox\" className=\"rounded border-gray-300 text-black focus:ring-black\" />\n                <span className=\"text-sm font-medium text-gray-600\">Remember me</span>\n              </label>\n              <a href=\"#\" className=\"text-sm font-bold text-black hover:underline\">Forgot password?</a>\n            </div>\n            <button type=\"submit\" disabled={loading} className=\"w-full h-14 bg-black text-white rounded-2xl font-bold hover:bg-gray-900 transition-colors disabled:opacity-70\">\n              {loading ? 'Signing in...' : 'Sign In'}\n            </button>\n          </form>\n        </div>\n      </div>\n      {/* Visual Section */}\n      <div className=\"hidden lg:flex w-1/2 bg-gray-900 p-12 items-end relative overflow-hidden\">\n        <div className=\"absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-indigo-300 via-purple-300 to-transparent\"></div>\n        <div className=\"relative z-10 text-white\">\n          <h3 className=\"text-3xl font-bold mb-4\">\"The components here are simply unmatched. Saved us weeks of development time.\"</h3>\n          <p className=\"font-medium opacity-80\">— Alex R., Frontend Engineer</p>\n        </div>\n      </div>\n    </div>\n  );\n}",
+    "isFree": false,
+    "credits": 25,
+    "source": "admin",
+    "status": "approved",
+    "rating": 5.0,
+    "downloads": 1056
+  },
+  {
+    "name": "Bouncy Pulse Loader",
+    "category": "UI Elements",
+    "description": "A highly customizable bouncy dot loader animation using framer-motion. Perfect for full-screen loading states.",
+    "code": "import React from 'react';\nimport { motion } from 'framer-motion';\n\nexport default function BouncyLoader() {\n  return (\n    <div className=\"flex items-center justify-center min-h-[300px] bg-gray-50 rounded-3xl\">\n      <div className=\"flex gap-4\">\n        {[0, 0.15, 0.3].map((delay, index) => (\n          <motion.div\n            key={index}\n            animate={{ \n              y: [0, -20, 0],\n              scale: [1, 1.2, 1],\n              opacity: [1, 0.5, 1]\n            }}\n            transition={{\n              duration: 0.8,\n              repeat: Infinity,\n              ease: \"easeInOut\",\n              delay\n            }}\n            className=\"w-6 h-6 bg-black rounded-full shadow-lg shadow-black/20\"\n          />\n        ))}\n      </div>\n    </div>\n  );\n}",
+    "isFree": true,
+    "credits": 0,
+    "source": "admin",
+    "status": "approved",
+    "rating": 4.8,
+    "downloads": 3210
+  }
+]

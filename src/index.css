@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  --bg: oklch(99% 0.002 240);
+  --surface: oklch(100% 0 0);
+  --fg: oklch(18% 0.012 250);
+  --muted: oklch(54% 0.012 250);
+  --border: oklch(92% 0.005 250);
+  --accent: oklch(58% 0.18 255);
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    system-ui, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui,
+    sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border);
+}
+
+.bento-card {
+  border: 1px solid var(--border);
+  border-radius: 40px;
+  padding: 3rem;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.bento-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--muted);
+  box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.1);
+}
+
+.floating-mockup {
+  position: absolute;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border);
+  z-index: -10;
+  pointer-events: none;
+}
+
+.btn-primary {
+  background: var(--fg);
+  color: var(--surface);
+  border-radius: 20px;
+  padding: 1rem 1.5rem;
+  font-weight: 800;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
+}
